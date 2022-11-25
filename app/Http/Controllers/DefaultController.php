@@ -25,7 +25,7 @@ class DefaultController extends Controller
         return Recipe::count();
     }
 
-    private function getTodayRecipe(): Recipe
+    private function getTodayRecipe(): ?Recipe
     {
         return Recipe::query()->inRandomOrder()->get()->first();
     }
