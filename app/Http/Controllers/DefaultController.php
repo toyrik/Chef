@@ -32,6 +32,6 @@ class DefaultController extends Controller
 
     private function getLatestRecipes(): Collection
     {
-        return Recipe::query()->limit(-5)->get();
+        return Recipe::query()->orderBy('created_at', 'desc')->limit(5)->get();
     }
 }
